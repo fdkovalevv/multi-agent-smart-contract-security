@@ -1,0 +1,35 @@
+{
+  "checkpoint_deadline": "2026-11-07 23:59 (timezone not specified by the course)",
+  "stage1_approved": true,
+  "stage1_approval_recorded_date": "2026-11-03",
+  "stage1_evidence": "User reply: Подтверждаю предложенные правила",
+  "approved_swcs": [
+    101,
+    104,
+    107,
+    113,
+    114,
+    115,
+    120,
+    128
+  ],
+  "unknown_and_conflicting_labels_remain_missing": true,
+  "split_ratios": [
+    0.7,
+    0.15,
+    0.15
+  ],
+  "seed": 42,
+  "conflict_policy": "exclude_conflicting_entity_swc_label_only",
+  "conflict_policy_reconfirmed_date": "2026-11-10",
+  "conflict_policy_evidence": "User reply: Исключать только конфликтующую метку",
+  "data_layout": "two_working_csv_tables",
+  "data_layout_tables": [
+    "data/raw/cgt/consolidated.csv",
+    "data/processed/contracts.csv"
+  ],
+  "data_layout_evidence": "User requested two CSVs and approved minimal adaptation of initial file I/O cells",
+  "main_analysis_excludes_solidifi": true,
+  "checkpoint_scope": "EDA only",
+  "scope_confirmed_date": "2026-11-10"
+}

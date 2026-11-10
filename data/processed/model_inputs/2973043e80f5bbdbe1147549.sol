@@ -1,0 +1,15 @@
+contract WithdrawDAO {
+    DAO constant public mainDAO = DAO(0xe4ae1efdfc53b73893af49113d8694a057b9c0d1);
+    address public trustee = 0x56ae819a1bc418121a6e8428b5884f7604152322;
+
+    function withdraw(){
+        uint balance = mainDAO.balanceOf(msg.sender);
+
+        if (!mainDAO.transferFrom(msg.sender, this, balance) || !msg.sender.send(balance))
+            throw;
+    }
+
+    function trusteeWithdraw() {
+        trustee.send((this.balance + mainDAO.balanceOf(this)) - mainDAO.totalSupply());
+    }
+}

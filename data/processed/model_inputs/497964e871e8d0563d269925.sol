@@ -1,0 +1,32 @@
+contract TimedCrowdsale {
+    address[] public fundraising;
+    uint256[] public money;
+    address private owner;
+    
+    constructor() public{
+        owner = msg.sender;
+    }
+    
+    modifier onlyOwner{
+        require(owner == msg.sender);
+        _;
+    }
+    
+    function run() external payable{
+        if(isSaleFinished()  == false){
+            require(msg.value > 0);
+            fundraising.push(msg.sender);
+            money.push(msg.value);
+        }
+    } 
+    
+    function getMoney() public onlyOwner{
+        msg.sender.transfer(address(this).balance);
+    }
+
+                                                          
+    function isSaleFinished() private view returns (bool) {
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         
+        return block.timestamp >= 1546300800;
+    }
+}

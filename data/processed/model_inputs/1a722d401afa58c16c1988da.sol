@@ -1,0 +1,13 @@
+contract AssertMultiTx1 {
+    uint256 private param;
+
+    function AssertMultiTx1(uint256 _param) public {
+        require(_param > 0);
+        param = _param;
+    }
+
+    function run() {
+        assert(param > 0);
+    }
+
+}

@@ -1,0 +1,2 @@
+# Preserve pinned dataset checksums on every platform.
+data/** -text

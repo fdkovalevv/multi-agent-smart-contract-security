@@ -1,0 +1,6 @@
+contract TestMest {
+                     
+    function MyContract() {
+
+    }
+}
